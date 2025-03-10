@@ -11,7 +11,8 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import coil.compose.rememberImagePainter
+import androidx.lifecycle.viewmodel.compose.viewModel
+import coil.compose.rememberAsyncImagePainter
 import com.example.examenandroid.ui.com.example.fakestoreapp.model.Product
 import com.example.examenandroid.ui.com.example.fakestoreapp.viewmodel.ProductViewModel
 
@@ -34,13 +35,13 @@ fun MyApp(viewModel: ProductViewModel = viewModel()) {
     }
 
     Column {
-        CategorySelector(selectedCategory) { selectedCategory = it }
+        CategorySelector { selectedCategory = it }
         ProductList(viewModel.products.collectAsState().value)
     }
 }
 
 @Composable
-fun CategorySelector(selectedCategory: String, onCategorySelected: (String) -> Unit) {
+fun CategorySelector(onCategorySelected: (String) -> Unit) {
     val categories = listOf("electronics", "jewelery", "men", "women")
 
     Row(modifier = Modifier.padding(8.dp)) {
@@ -68,7 +69,7 @@ fun ProductList(products: List<Product>) {
 fun ProductItem(product: Product) {
     Card(modifier = Modifier.padding(8.dp).fillMaxWidth()) {
         Column(modifier = Modifier.padding(8.dp)) {
-            Image(painter = rememberImagePainter(product.image), contentDescription = null)
+            Image(painter = rememberAsyncImagePainter(product.image), contentDescription = null)
             Text(product.title, style = MaterialTheme.typography.bodyLarge)
             Text("Price: $${product.price}")
         }

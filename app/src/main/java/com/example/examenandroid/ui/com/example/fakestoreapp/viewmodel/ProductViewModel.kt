@@ -1,5 +1,6 @@
 package com.example.examenandroid.ui.com.example.fakestoreapp.viewmodel
 
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.examenandroid.ui.com.example.fakestoreapp.model.Product
