@@ -7,11 +7,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import com.example.examenandroid.ui.com.example.fakestoreapp.model.Product
 import com.example.examenandroid.ui.com.example.fakestoreapp.viewmodel.ProductViewModel
@@ -25,6 +24,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@JvmOverloads
 @Composable
 fun MyApp(viewModel: ProductViewModel = viewModel()) {
     var selectedCategory by remember { mutableStateOf("electronics") }
@@ -69,7 +69,7 @@ fun ProductItem(product: Product) {
     Card(modifier = Modifier.padding(8.dp).fillMaxWidth()) {
         Column(modifier = Modifier.padding(8.dp)) {
             Image(painter = rememberImagePainter(product.image), contentDescription = null)
-            Text(product.title, style = MaterialTheme.typography.h6)
+            Text(product.title, style = MaterialTheme.typography.bodyLarge)
             Text("Price: $${product.price}")
         }
     }
