@@ -1,4 +1,4 @@
-package com.example.fakestoreapp.model
+package com.example.examenandroid.ui.com.example.fakestoreapp.model
 
 data class Product(
     val id: Int,

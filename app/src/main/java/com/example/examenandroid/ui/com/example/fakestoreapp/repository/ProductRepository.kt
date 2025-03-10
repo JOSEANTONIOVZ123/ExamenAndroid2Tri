@@ -1,7 +1,7 @@
-package com.example.fakestoreapp.repository
+package com.example.examenandroid.ui.com.example.fakestoreapp.repository
 
-import com.example.fakestoreapp.model.Product
-import com.example.fakestoreapp.network.RetrofitClient
+import com.example.examenandroid.ui.com.example.fakestoreapp.model.Product
+import com.example.examenandroid.ui.com.example.fakestoreapp.network.RetrofitClient
 
 class ProductRepository {
     private val apiService = RetrofitClient.apiService

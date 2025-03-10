@@ -1,4 +1,4 @@
-package com.example.fakestoreapp
+package com.example.examenandroid.ui.com.example.fakestoreapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,8 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
-import com.example.fakestoreapp.model.Product
-import com.example.fakestoreapp.viewmodel.ProductViewModel
+import com.example.examenandroid.ui.com.example.fakestoreapp.model.Product
+import com.example.examenandroid.ui.com.example.fakestoreapp.viewmodel.ProductViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

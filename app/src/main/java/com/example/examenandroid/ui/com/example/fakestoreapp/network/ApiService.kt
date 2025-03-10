@@ -1,6 +1,6 @@
-package com.example.fakestoreapp.network
+package com.example.examenandroid.ui.com.example.fakestoreapp.network
 
-import com.example.fakestoreapp.model.Product
+import com.example.examenandroid.ui.com.example.fakestoreapp.model.Product
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -21,3 +21,5 @@ interface ApiService {
     @GET("products/{id}")
     suspend fun getProductDetails(@Path("id") id: Int): Product
 }
+
+

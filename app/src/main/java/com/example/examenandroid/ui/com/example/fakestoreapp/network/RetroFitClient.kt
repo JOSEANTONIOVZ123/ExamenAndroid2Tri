@@ -1,4 +1,4 @@
-package com.example.fakestoreapp.network
+package com.example.examenandroid.ui.com.example.fakestoreapp.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
