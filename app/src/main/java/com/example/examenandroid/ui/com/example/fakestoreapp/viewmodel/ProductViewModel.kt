@@ -1,6 +1,7 @@
 package com.example.examenandroid.ui.com.example.fakestoreapp.viewmodel
 
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.examenandroid.ui.com.example.fakestoreapp.model.Product
@@ -17,13 +18,18 @@ class ProductViewModel : ViewModel() {
 
     fun fetchProducts(category: String) {
         viewModelScope.launch {
-            _products.value = when (category) {
-                "electronics" -> repository.getElectronics()
-                "jewelery" -> repository.getJewelry()
-                "men" -> repository.getMensClothing()
-                "women" -> repository.getWomensClothing()
-                else -> emptyList()
+            try {
+                _products.value = when (category) {
+                    "electronics" -> repository.getElectronics()
+                    "jewelery" -> repository.getJewelry()
+                    "men" -> repository.getMensClothing()
+                    "women" -> repository.getWomensClothing()
+                    else -> emptyList()
+                }
+            } catch (e: Exception) {
+                Log.e("ProductViewModel", "Error fetching products: ${e.message}")
             }
         }
     }
+
 }

@@ -27,7 +27,8 @@ class MainActivity : ComponentActivity() {
 
 @JvmOverloads
 @Composable
-fun MyApp(viewModel: ProductViewModel = viewModel()) {
+fun MyApp(viewModel: ProductViewModel = viewModel())
+ {
     var selectedCategory by remember { mutableStateOf("electronics") }
 
     LaunchedEffect(selectedCategory) {
